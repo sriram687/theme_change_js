@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            width: 100%;
+            margin: 0; 
+            display: flex; 
+            justify-content: center;
+            align-items: center; 
+        }
+        #btn{
+            margin-bottom: 150px;
+            height: 35px;
+            width: 90px;
+            border-radius: 15px;
+            margin-left: 250px;
+        }
+        #content h1{
+            margin-bottom: 200px;
+            
+            border-top: 20px ;
+            
+        }
+        p{
+            padding :25px;
+            display: flex;
+            justify-content: center;
+        }
+        #content{
+            border: 12px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <h1>this is an light theme and dark theme project😎😎</h1>
+        <p>Light and dark mode toggling in JavaScript allows users to switch between a bright 🌞 and dim 🌙 theme for better usability and comfort. This is achieved by adding or removing a dark-mode class to the body element and adjusting CSS styles accordingly. You can implement it using event listeners on a button click and save the user’s preference in localStorage for persistence. It's a simple yet powerful feature for enhancing UX! ✨</p>
+        <button id="btn">change theme</button>
+    </div>
+    <script>
+        let toggled = false;
+        let body = document.body;
+        let h1 = document.querySelector('#content h1');
+        let content = document.getElementById('content');
+        let btn = document.getElementById('btn');
+        btn.addEventListener("click",event =>{
+            if(toggled){
+                body.style.background = "white";
+                content.style.color = "black";
+                h1.style.borderColor = "black";
+                content.style.borderColor = "black";
+                
+                btn.textContent = "click -->dark";
+            }
+            else{
+                body.style.background = "black";
+                content.style.borderColor = "white";
+                h1.style.borderColor = "white";
+                content.style.color = "white";
+                btn.textContent = "click -->light";
+            }
+            toggled = !toggled;
+        });
+    </script>    
+</body>
+</html>
